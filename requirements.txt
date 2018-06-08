@@ -1,0 +1,5 @@
+defusedexpat==0.4
+mock==2.0.0
+awscli
+pulumi>=0.12.0
+pulumi_aws
