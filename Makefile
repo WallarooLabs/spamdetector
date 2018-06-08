@@ -7,6 +7,7 @@
 
 SINK_PORT := 19991
 SOURCE_PORT := 19990
+WAIT_FOR_IT := ./wait_for_it
 
 amoc:
 	git clone https://github.com/pzel/amoc --depth=1 &&\
@@ -23,7 +24,7 @@ build-chat: mongooseim
 start-chat:
 	export WALLAROO_TCP_HOSTPORT="127.0.0.1:$(SOURCE_PORT)" &&\
 	cd mongooseim && ./_build/prod/rel/mongooseim/bin/mongooseim start
-	wait_for_it localhost:5222
+	$(WAIT_FOR_IT) localhost:5222
 
 stop-chat:
 	-cd mongooseim && ./_build/prod/rel/mongooseim/bin/mongooseim stop
@@ -33,7 +34,7 @@ start-bots: amoc
 
 start-sink: stop-sink clean-sink-log
 	nc -k -p $(SINK_PORT) -l 127.0.0.1 > sink.log &
-	wait_for_it 127.0.0.1:$(SINK_PORT)
+	$(WAIT_FOR_IT) 127.0.0.1:$(SINK_PORT)
 
 stop-sink:
 	-pkill -f $(SINK_PORT)
