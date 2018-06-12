@@ -1,0 +1,72 @@
+STARTING at  Mon Jun 11 19:48:50 PDT 2018
+SCALING TIMES
+
+Scaling to 1
+info: 3 changes performed:
+    + 3 resources created
+Update duration: 29.26391517s
+Permalink: https://pulumi.com/pzel/testapp-ec2/updates/15
+
+Scaling to 5
+info: 4 changes performed:
+    + 4 resources created
+      3 resources unchanged
+Update duration: 2m7.567581676s
+Permalink: https://pulumi.com/pzel/testapp-ec2/updates/16
+
+Scaling to 10
+info: 5 changes performed:
+    + 5 resources created
+      7 resources unchanged
+Update duration: 2m20.983808001s
+Permalink: https://pulumi.com/pzel/testapp-ec2/updates/17
+
+Scaling to 5
+info: 5 changes performed:
+    - 5 resources deleted
+      7 resources unchanged
+Update duration: 4m31.128001578s
+Permalink: https://pulumi.com/pzel/testapp-ec2/updates/18
+
+Scaling to 1
+info: 4 changes performed:
+    - 4 resources deleted
+      3 resources unchanged
+Update duration: 3m10.515052466s
+Permalink: https://pulumi.com/pzel/testapp-ec2/updates/19
+
+Scaling to 10
+info: 9 changes performed:
+    + 9 resources created
+      3 resources unchanged
+Update duration: 3m38.004297374s
+Permalink: https://pulumi.com/pzel/testapp-ec2/updates/20
+
+Scaling to 1
+info: 9 changes performed:
+    - 9 resources deleted
+      3 resources unchanged
+Update duration: 7m49.261167132s
+Permalink: https://pulumi.com/pzel/testapp-ec2/updates/21
+
+PROVISIONING
+
+Provisioning 1
+info: 3 changes performed:
+    + 3 resources created
+Update duration: 38.656588404s
+Permalink: https://pulumi.com/pzel/testapp-ec2/updates/23
+
+Provisioning 5
+info: 7 changes performed:
+    + 7 resources created
+Update duration: 2m1.034248059s
+Permalink: https://pulumi.com/pzel/testapp-ec2/updates/25
+
+Provisioning 10
+info: 12 changes performed:
+    + 12 resources created
+Update duration: 4m8.345469628s
+Permalink: https://pulumi.com/pzel/testapp-ec2/updates/27
+
+ENDING at  Mon Jun 11 20:28:21 PDT 2018

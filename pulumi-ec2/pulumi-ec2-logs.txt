@@ -1,0 +1,604 @@
+STARTING at  Mon Jun 11 19:48:50 PDT 2018
+SCALING TIMES 
+Scaling to 1
+Previewing update of stack 'testapp-ec2'
+Previewing changes:
+
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 create 
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 create 
+ +  aws:ec2:SecurityGroup simons-testapp-secgrp create 
+ +  aws:ec2:SecurityGroup simons-testapp-secgrp create 
+ +  aws:ec2:Instance simons-testapp-www-1 create 
+ +  aws:ec2:Instance simons-testapp-www-1 create 
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 create 
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 create 
+ 
+info: 3 changes previewed:
+    + 3 resources to create
+
+Updating stack 'testapp-ec2'
+Performing changes:
+
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 creating 
+ +  aws:ec2:SecurityGroup simons-testapp-secgrp creating 
+ +  aws:ec2:SecurityGroup simons-testapp-secgrp created 
+ +  aws:ec2:Instance simons-testapp-www-1 creating 
+ +  aws:ec2:Instance simons-testapp-www-1 created 
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 creating. 
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 created 
+ 
+---outputs:---
+publicHostName: "ec2-54-218-72-252.us-west-2.compute.amazonaws.com"
+publicIp      : "54.218.72.252"
+
+info: 3 changes performed:
+    + 3 resources created
+Update duration: 29.26391517s
+
+Permalink: https://pulumi.com/pzel/testapp-ec2/updates/15
+Scaling to 5
+Previewing update of stack 'testapp-ec2'
+Previewing changes:
+
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ *  aws:ec2:SecurityGroup simons-testapp-secgrp no change 
+ *  aws:ec2:SecurityGroup simons-testapp-secgrp no change 
+ *  aws:ec2:Instance simons-testapp-www-1 no change 
+ *  aws:ec2:Instance simons-testapp-www-1 no change 
+ +  aws:ec2:Instance simons-testapp-www-5 create 
+ +  aws:ec2:Instance simons-testapp-www-5 create 
+ +  aws:ec2:Instance simons-testapp-www-2 create 
+ +  aws:ec2:Instance simons-testapp-www-2 create 
+ +  aws:ec2:Instance simons-testapp-www-3 create 
+ +  aws:ec2:Instance simons-testapp-www-3 create 
+ +  aws:ec2:Instance simons-testapp-www-4 create 
+ +  aws:ec2:Instance simons-testapp-www-4 create 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 no change 
+ 
+info: 4 changes previewed:
+    + 4 resources to create
+      3 resources unchanged
+
+Updating stack 'testapp-ec2'
+Performing changes:
+
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ *  aws:ec2:SecurityGroup simons-testapp-secgrp unchanged 
+ *  aws:ec2:SecurityGroup simons-testapp-secgrp unchanged 
+ +  aws:ec2:Instance simons-testapp-www-2 creating 
+ +  aws:ec2:Instance simons-testapp-www-2 created 
+ +  aws:ec2:Instance simons-testapp-www-5 creating 
+ +  aws:ec2:Instance simons-testapp-www-5 created 
+ *  aws:ec2:Instance simons-testapp-www-1 unchanged 
+ *  aws:ec2:Instance simons-testapp-www-1 unchanged 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ +  aws:ec2:Instance simons-testapp-www-3 creating 
+ +  aws:ec2:Instance simons-testapp-www-3 created 
+ +  aws:ec2:Instance simons-testapp-www-4 creating.. 
+ +  aws:ec2:Instance simons-testapp-www-4 created 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 done 
+ 
+---outputs:---
+publicHostName: "ec2-54-218-72-252.us-west-2.compute.amazonaws.com"
+publicIp      : "54.218.72.252"
+
+info: 4 changes performed:
+    + 4 resources created
+      3 resources unchanged
+Update duration: 2m7.567581676s
+
+Permalink: https://pulumi.com/pzel/testapp-ec2/updates/16
+Scaling to 10
+Previewing update of stack 'testapp-ec2'
+Previewing changes:
+
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ *  aws:ec2:SecurityGroup simons-testapp-secgrp no change 
+ *  aws:ec2:SecurityGroup simons-testapp-secgrp no change 
+ *  aws:ec2:Instance simons-testapp-www-1 no change 
+ *  aws:ec2:Instance simons-testapp-www-1 no change 
+ +  aws:ec2:Instance simons-testapp-www-10 create 
+ +  aws:ec2:Instance simons-testapp-www-10 create 
+ *  aws:ec2:Instance simons-testapp-www-2 no change 
+ *  aws:ec2:Instance simons-testapp-www-2 no change 
+ *  aws:ec2:Instance simons-testapp-www-3 no change 
+ *  aws:ec2:Instance simons-testapp-www-3 no change 
+ +  aws:ec2:Instance simons-testapp-www-7 create 
+ +  aws:ec2:Instance simons-testapp-www-7 create 
+ +  aws:ec2:Instance simons-testapp-www-6 create 
+ +  aws:ec2:Instance simons-testapp-www-6 create 
+ +  aws:ec2:Instance simons-testapp-www-8 create 
+ +  aws:ec2:Instance simons-testapp-www-8 create 
+ *  aws:ec2:Instance simons-testapp-www-4 no change 
+ *  aws:ec2:Instance simons-testapp-www-4 no change 
+ +  aws:ec2:Instance simons-testapp-www-9 create 
+ +  aws:ec2:Instance simons-testapp-www-9 create 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ *  aws:ec2:Instance simons-testapp-www-5 no change 
+ *  aws:ec2:Instance simons-testapp-www-5 no change 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 no change 
+ 
+info: 5 changes previewed:
+    + 5 resources to create
+      7 resources unchanged
+
+Updating stack 'testapp-ec2'
+Performing changes:
+
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ *  aws:ec2:SecurityGroup simons-testapp-secgrp unchanged 
+ *  aws:ec2:SecurityGroup simons-testapp-secgrp unchanged 
+ *  aws:ec2:Instance simons-testapp-www-1 unchanged 
+ *  aws:ec2:Instance simons-testapp-www-1 unchanged 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ *  aws:ec2:Instance simons-testapp-www-5 unchanged 
+ *  aws:ec2:Instance simons-testapp-www-5 unchanged 
+ +  aws:ec2:Instance simons-testapp-www-10 creating 
+ +  aws:ec2:Instance simons-testapp-www-10 created 
+ *  aws:ec2:Instance simons-testapp-www-2 unchanged 
+ *  aws:ec2:Instance simons-testapp-www-2 unchanged 
+ +  aws:ec2:Instance simons-testapp-www-6 creating.. 
+ +  aws:ec2:Instance simons-testapp-www-6 created 
+ *  aws:ec2:Instance simons-testapp-www-3 unchanged 
+ *  aws:ec2:Instance simons-testapp-www-3 unchanged 
+ +  aws:ec2:Instance simons-testapp-www-7 creating.. 
+ +  aws:ec2:Instance simons-testapp-www-7 created 
+ *  aws:ec2:Instance simons-testapp-www-4 unchanged 
+ *  aws:ec2:Instance simons-testapp-www-4 unchanged 
+ +  aws:ec2:Instance simons-testapp-www-8 creating 
+ +  aws:ec2:Instance simons-testapp-www-8 created 
+ +  aws:ec2:Instance simons-testapp-www-9 creating.. 
+ +  aws:ec2:Instance simons-testapp-www-9 created 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 done 
+ 
+---outputs:---
+publicHostName: "ec2-54-218-72-252.us-west-2.compute.amazonaws.com"
+publicIp      : "54.218.72.252"
+
+info: 5 changes performed:
+    + 5 resources created
+      7 resources unchanged
+Update duration: 2m20.983808001s
+
+Permalink: https://pulumi.com/pzel/testapp-ec2/updates/17
+Scaling to 5
+Previewing update of stack 'testapp-ec2'
+Previewing changes:
+
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ *  aws:ec2:SecurityGroup simons-testapp-secgrp no change 
+ *  aws:ec2:SecurityGroup simons-testapp-secgrp no change 
+ *  aws:ec2:Instance simons-testapp-www-1 no change 
+ *  aws:ec2:Instance simons-testapp-www-1 no change 
+ *  aws:ec2:Instance simons-testapp-www-5 no change 
+ *  aws:ec2:Instance simons-testapp-www-5 no change 
+ *  aws:ec2:Instance simons-testapp-www-2 no change 
+ *  aws:ec2:Instance simons-testapp-www-2 no change 
+ *  aws:ec2:Instance simons-testapp-www-3 no change 
+ *  aws:ec2:Instance simons-testapp-www-3 no change 
+ *  aws:ec2:Instance simons-testapp-www-4 no change 
+ *  aws:ec2:Instance simons-testapp-www-4 no change 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ -  aws:ec2:Instance simons-testapp-www-9 delete 
+ -  aws:ec2:Instance simons-testapp-www-9 delete 
+ -  aws:ec2:Instance simons-testapp-www-8 delete 
+ -  aws:ec2:Instance simons-testapp-www-8 delete 
+ -  aws:ec2:Instance simons-testapp-www-7 delete 
+ -  aws:ec2:Instance simons-testapp-www-7 delete 
+ -  aws:ec2:Instance simons-testapp-www-6 delete 
+ -  aws:ec2:Instance simons-testapp-www-6 delete 
+ -  aws:ec2:Instance simons-testapp-www-10 delete 
+ -  aws:ec2:Instance simons-testapp-www-10 delete 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 no change 
+ 
+info: 5 changes previewed:
+    - 5 resources to delete
+      7 resources unchanged
+
+Updating stack 'testapp-ec2'
+Performing changes:
+
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ *  aws:ec2:SecurityGroup simons-testapp-secgrp unchanged 
+ *  aws:ec2:SecurityGroup simons-testapp-secgrp unchanged 
+ *  aws:ec2:Instance simons-testapp-www-5 unchanged 
+ *  aws:ec2:Instance simons-testapp-www-5 unchanged 
+ *  aws:ec2:Instance simons-testapp-www-2 unchanged 
+ *  aws:ec2:Instance simons-testapp-www-2 unchanged 
+ *  aws:ec2:Instance simons-testapp-www-3 unchanged 
+ *  aws:ec2:Instance simons-testapp-www-3 unchanged 
+ *  aws:ec2:Instance simons-testapp-www-1 unchanged 
+ *  aws:ec2:Instance simons-testapp-www-1 unchanged 
+ *  aws:ec2:Instance simons-testapp-www-4 unchanged 
+ *  aws:ec2:Instance simons-testapp-www-4 unchanged 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ -  aws:ec2:Instance simons-testapp-www-9 deleting 
+ -  aws:ec2:Instance simons-testapp-www-9 deleted 
+ -  aws:ec2:Instance simons-testapp-www-8 deleting 
+ -  aws:ec2:Instance simons-testapp-www-8 deleted 
+ -  aws:ec2:Instance simons-testapp-www-7 deleting 
+ -  aws:ec2:Instance simons-testapp-www-7 deleted 
+ -  aws:ec2:Instance simons-testapp-www-6 deleting 
+ -  aws:ec2:Instance simons-testapp-www-6 deleted 
+ -  aws:ec2:Instance simons-testapp-www-10 deleting.. 
+ -  aws:ec2:Instance simons-testapp-www-10 deleted 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 done 
+ 
+---outputs:---
+publicHostName: "ec2-54-218-72-252.us-west-2.compute.amazonaws.com"
+publicIp      : "54.218.72.252"
+
+info: 5 changes performed:
+    - 5 resources deleted
+      7 resources unchanged
+Update duration: 4m31.128001578s
+
+Permalink: https://pulumi.com/pzel/testapp-ec2/updates/18
+Scaling to 1
+Previewing update of stack 'testapp-ec2'
+Previewing changes:
+
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ *  aws:ec2:SecurityGroup simons-testapp-secgrp no change 
+ *  aws:ec2:SecurityGroup simons-testapp-secgrp no change 
+ *  aws:ec2:Instance simons-testapp-www-1 no change 
+ *  aws:ec2:Instance simons-testapp-www-1 no change 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ -  aws:ec2:Instance simons-testapp-www-4 delete 
+ -  aws:ec2:Instance simons-testapp-www-4 delete 
+ -  aws:ec2:Instance simons-testapp-www-3 delete 
+ -  aws:ec2:Instance simons-testapp-www-3 delete 
+ -  aws:ec2:Instance simons-testapp-www-2 delete 
+ -  aws:ec2:Instance simons-testapp-www-2 delete 
+ -  aws:ec2:Instance simons-testapp-www-5 delete 
+ -  aws:ec2:Instance simons-testapp-www-5 delete 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 no change 
+ 
+info: 4 changes previewed:
+    - 4 resources to delete
+      3 resources unchanged
+
+Updating stack 'testapp-ec2'
+Performing changes:
+
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ *  aws:ec2:SecurityGroup simons-testapp-secgrp unchanged 
+ *  aws:ec2:SecurityGroup simons-testapp-secgrp unchanged 
+ *  aws:ec2:Instance simons-testapp-www-1 unchanged 
+ *  aws:ec2:Instance simons-testapp-www-1 unchanged 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ -  aws:ec2:Instance simons-testapp-www-4 deleting 
+ -  aws:ec2:Instance simons-testapp-www-4 deleted 
+ -  aws:ec2:Instance simons-testapp-www-3 deleting 
+ -  aws:ec2:Instance simons-testapp-www-3 deleted 
+ -  aws:ec2:Instance simons-testapp-www-2 deleting 
+ -  aws:ec2:Instance simons-testapp-www-2 deleted 
+ -  aws:ec2:Instance simons-testapp-www-5 deleting 
+ -  aws:ec2:Instance simons-testapp-www-5 deleted 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 done 
+ 
+---outputs:---
+publicHostName: "ec2-54-218-72-252.us-west-2.compute.amazonaws.com"
+publicIp      : "54.218.72.252"
+
+info: 4 changes performed:
+    - 4 resources deleted
+      3 resources unchanged
+Update duration: 3m10.515052466s
+
+Permalink: https://pulumi.com/pzel/testapp-ec2/updates/19
+Scaling to 10
+Previewing update of stack 'testapp-ec2'
+Previewing changes:
+
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ *  aws:ec2:SecurityGroup simons-testapp-secgrp no change 
+ *  aws:ec2:SecurityGroup simons-testapp-secgrp no change 
+ *  aws:ec2:Instance simons-testapp-www-1 no change 
+ *  aws:ec2:Instance simons-testapp-www-1 no change 
+ +  aws:ec2:Instance simons-testapp-www-10 create 
+ +  aws:ec2:Instance simons-testapp-www-10 create 
+ +  aws:ec2:Instance simons-testapp-www-2 create 
+ +  aws:ec2:Instance simons-testapp-www-2 create 
+ +  aws:ec2:Instance simons-testapp-www-7 create 
+ +  aws:ec2:Instance simons-testapp-www-7 create 
+ +  aws:ec2:Instance simons-testapp-www-8 create 
+ +  aws:ec2:Instance simons-testapp-www-8 create 
+ +  aws:ec2:Instance simons-testapp-www-9 create 
+ +  aws:ec2:Instance simons-testapp-www-9 create 
+ +  aws:ec2:Instance simons-testapp-www-4 create 
+ +  aws:ec2:Instance simons-testapp-www-4 create 
+ +  aws:ec2:Instance simons-testapp-www-3 create 
+ +  aws:ec2:Instance simons-testapp-www-3 create 
+ +  aws:ec2:Instance simons-testapp-www-5 create 
+ +  aws:ec2:Instance simons-testapp-www-5 create 
+ +  aws:ec2:Instance simons-testapp-www-6 create 
+ +  aws:ec2:Instance simons-testapp-www-6 create 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 no change 
+ 
+info: 9 changes previewed:
+    + 9 resources to create
+      3 resources unchanged
+
+Updating stack 'testapp-ec2'
+Performing changes:
+
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ *  aws:ec2:SecurityGroup simons-testapp-secgrp unchanged 
+ *  aws:ec2:SecurityGroup simons-testapp-secgrp unchanged 
+ +  aws:ec2:Instance simons-testapp-www-2 creating 
+ +  aws:ec2:Instance simons-testapp-www-2 created 
+ *  aws:ec2:Instance simons-testapp-www-1 unchanged 
+ *  aws:ec2:Instance simons-testapp-www-1 unchanged 
+ +  aws:ec2:Instance simons-testapp-www-10 creating.. 
+ +  aws:ec2:Instance simons-testapp-www-10 created 
+ +  aws:ec2:Instance simons-testapp-www-3 creating 
+ +  aws:ec2:Instance simons-testapp-www-3 created 
+ +  aws:ec2:Instance simons-testapp-www-6 creating 
+ +  aws:ec2:Instance simons-testapp-www-6 created 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running. 
+ +  aws:ec2:Instance simons-testapp-www-7 creating.. 
+ +  aws:ec2:Instance simons-testapp-www-7 created 
+ +  aws:ec2:Instance simons-testapp-www-4 creating 
+ +  aws:ec2:Instance simons-testapp-www-4 created 
+ +  aws:ec2:Instance simons-testapp-www-8 creating.. 
+ +  aws:ec2:Instance simons-testapp-www-8 created 
+ +  aws:ec2:Instance simons-testapp-www-5 creating 
+ +  aws:ec2:Instance simons-testapp-www-5 created 
+ +  aws:ec2:Instance simons-testapp-www-9 creating.. 
+ +  aws:ec2:Instance simons-testapp-www-9 created 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 done 
+ 
+---outputs:---
+publicHostName: "ec2-54-218-72-252.us-west-2.compute.amazonaws.com"
+publicIp      : "54.218.72.252"
+
+info: 9 changes performed:
+    + 9 resources created
+      3 resources unchanged
+Update duration: 3m38.004297374s
+
+Permalink: https://pulumi.com/pzel/testapp-ec2/updates/20
+Scaling to 1
+Previewing update of stack 'testapp-ec2'
+Previewing changes:
+
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ *  aws:ec2:SecurityGroup simons-testapp-secgrp no change 
+ *  aws:ec2:SecurityGroup simons-testapp-secgrp no change 
+ *  aws:ec2:Instance simons-testapp-www-1 no change 
+ *  aws:ec2:Instance simons-testapp-www-1 no change 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ -  aws:ec2:Instance simons-testapp-www-9 delete 
+ -  aws:ec2:Instance simons-testapp-www-9 delete 
+ -  aws:ec2:Instance simons-testapp-www-5 delete 
+ -  aws:ec2:Instance simons-testapp-www-5 delete 
+ -  aws:ec2:Instance simons-testapp-www-8 delete 
+ -  aws:ec2:Instance simons-testapp-www-8 delete 
+ -  aws:ec2:Instance simons-testapp-www-4 delete 
+ -  aws:ec2:Instance simons-testapp-www-4 delete 
+ -  aws:ec2:Instance simons-testapp-www-7 delete 
+ -  aws:ec2:Instance simons-testapp-www-7 delete 
+ -  aws:ec2:Instance simons-testapp-www-6 delete 
+ -  aws:ec2:Instance simons-testapp-www-6 delete 
+ -  aws:ec2:Instance simons-testapp-www-3 delete 
+ -  aws:ec2:Instance simons-testapp-www-3 delete 
+ -  aws:ec2:Instance simons-testapp-www-10 delete 
+ -  aws:ec2:Instance simons-testapp-www-10 delete 
+ -  aws:ec2:Instance simons-testapp-www-2 delete 
+ -  aws:ec2:Instance simons-testapp-www-2 delete 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 no change 
+ 
+info: 9 changes previewed:
+    - 9 resources to delete
+      3 resources unchanged
+
+Updating stack 'testapp-ec2'
+Performing changes:
+
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ *  aws:ec2:SecurityGroup simons-testapp-secgrp unchanged 
+ *  aws:ec2:SecurityGroup simons-testapp-secgrp unchanged 
+ *  aws:ec2:Instance simons-testapp-www-1 unchanged 
+ *  aws:ec2:Instance simons-testapp-www-1 unchanged 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 running 
+ -  aws:ec2:Instance simons-testapp-www-9 deleting 
+ -  aws:ec2:Instance simons-testapp-www-9 deleted 
+ -  aws:ec2:Instance simons-testapp-www-5 deleting.. 
+ -  aws:ec2:Instance simons-testapp-www-5 deleted 
+ -  aws:ec2:Instance simons-testapp-www-8 deleting.. 
+ -  aws:ec2:Instance simons-testapp-www-8 deleted 
+ -  aws:ec2:Instance simons-testapp-www-4 deleting 
+ -  aws:ec2:Instance simons-testapp-www-4 deleted 
+ -  aws:ec2:Instance simons-testapp-www-7 deleting 
+ -  aws:ec2:Instance simons-testapp-www-7 deleted 
+ -  aws:ec2:Instance simons-testapp-www-6 deleting.. 
+ -  aws:ec2:Instance simons-testapp-www-6 deleted 
+ -  aws:ec2:Instance simons-testapp-www-3 deleting.. 
+ -  aws:ec2:Instance simons-testapp-www-3 deleted 
+ -  aws:ec2:Instance simons-testapp-www-10 deleting 
+ -  aws:ec2:Instance simons-testapp-www-10 deleted 
+ -  aws:ec2:Instance simons-testapp-www-2 deleting.. 
+ -  aws:ec2:Instance simons-testapp-www-2 deleted 
+ *  pulumi:pulumi:Stack simons-testapp-testapp-ec2 done 
+ 
+---outputs:---
+publicHostName: "ec2-54-218-72-252.us-west-2.compute.amazonaws.com"
+publicIp      : "54.218.72.252"
+
+info: 9 changes performed:
+    - 9 resources deleted
+      3 resources unchanged
+Update duration: 7m49.261167132s
+
+Permalink: https://pulumi.com/pzel/testapp-ec2/updates/21
+PROVISIONING
+Provisioning 1
+Previewing update of stack 'testapp-ec2'
+Previewing changes:
+
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 create 
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 create 
+ +  aws:ec2:SecurityGroup simons-testapp-secgrp create 
+ +  aws:ec2:SecurityGroup simons-testapp-secgrp create 
+ +  aws:ec2:Instance simons-testapp-www-1 create 
+ +  aws:ec2:Instance simons-testapp-www-1 create 
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 create 
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 create 
+ 
+info: 3 changes previewed:
+    + 3 resources to create
+
+Updating stack 'testapp-ec2'
+Performing changes:
+
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 creating 
+ +  aws:ec2:SecurityGroup simons-testapp-secgrp creating 
+ +  aws:ec2:SecurityGroup simons-testapp-secgrp created 
+ +  aws:ec2:Instance simons-testapp-www-1 creating 
+ +  aws:ec2:Instance simons-testapp-www-1 created 
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 creating. 
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 created 
+ 
+---outputs:---
+publicHostName: "ec2-54-201-32-90.us-west-2.compute.amazonaws.com"
+publicIp      : "54.201.32.90"
+
+info: 3 changes performed:
+    + 3 resources created
+Update duration: 38.656588404s
+
+Permalink: https://pulumi.com/pzel/testapp-ec2/updates/23
+Provisioning 5
+Previewing update of stack 'testapp-ec2'
+Previewing changes:
+
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 create 
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 create 
+ +  aws:ec2:SecurityGroup simons-testapp-secgrp create 
+ +  aws:ec2:SecurityGroup simons-testapp-secgrp create 
+ +  aws:ec2:Instance simons-testapp-www-5 create 
+ +  aws:ec2:Instance simons-testapp-www-5 create 
+ +  aws:ec2:Instance simons-testapp-www-1 create 
+ +  aws:ec2:Instance simons-testapp-www-1 create 
+ +  aws:ec2:Instance simons-testapp-www-2 create 
+ +  aws:ec2:Instance simons-testapp-www-2 create 
+ +  aws:ec2:Instance simons-testapp-www-3 create 
+ +  aws:ec2:Instance simons-testapp-www-3 create 
+ +  aws:ec2:Instance simons-testapp-www-4 create 
+ +  aws:ec2:Instance simons-testapp-www-4 create 
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 create 
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 create 
+ 
+info: 7 changes previewed:
+    + 7 resources to create
+
+Updating stack 'testapp-ec2'
+Performing changes:
+
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 creating 
+ +  aws:ec2:SecurityGroup simons-testapp-secgrp creating 
+ +  aws:ec2:SecurityGroup simons-testapp-secgrp created 
+ +  aws:ec2:Instance simons-testapp-www-1 creating 
+ +  aws:ec2:Instance simons-testapp-www-1 created 
+ +  aws:ec2:Instance simons-testapp-www-5 creating.. 
+ +  aws:ec2:Instance simons-testapp-www-5 created 
+ +  aws:ec2:Instance simons-testapp-www-2 creating 
+ +  aws:ec2:Instance simons-testapp-www-2 created 
+ +  aws:ec2:Instance simons-testapp-www-3 creating.. 
+ +  aws:ec2:Instance simons-testapp-www-3 created 
+ +  aws:ec2:Instance simons-testapp-www-4 creating 
+ +  aws:ec2:Instance simons-testapp-www-4 created 
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 creating.. 
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 created 
+ 
+---outputs:---
+publicHostName: "ec2-34-220-100-5.us-west-2.compute.amazonaws.com"
+publicIp      : "34.220.100.5"
+
+info: 7 changes performed:
+    + 7 resources created
+Update duration: 2m1.034248059s
+
+Permalink: https://pulumi.com/pzel/testapp-ec2/updates/25
+Provisioning 10
+Previewing update of stack 'testapp-ec2'
+Previewing changes:
+
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 create 
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 create 
+ +  aws:ec2:SecurityGroup simons-testapp-secgrp create 
+ +  aws:ec2:SecurityGroup simons-testapp-secgrp create 
+ +  aws:ec2:Instance simons-testapp-www-1 create 
+ +  aws:ec2:Instance simons-testapp-www-1 create 
+ +  aws:ec2:Instance simons-testapp-www-10 create 
+ +  aws:ec2:Instance simons-testapp-www-10 create 
+ +  aws:ec2:Instance simons-testapp-www-5 create 
+ +  aws:ec2:Instance simons-testapp-www-5 create 
+ +  aws:ec2:Instance simons-testapp-www-6 create 
+ +  aws:ec2:Instance simons-testapp-www-6 create 
+ +  aws:ec2:Instance simons-testapp-www-2 create 
+ +  aws:ec2:Instance simons-testapp-www-2 create 
+ +  aws:ec2:Instance simons-testapp-www-3 create 
+ +  aws:ec2:Instance simons-testapp-www-3 create 
+ +  aws:ec2:Instance simons-testapp-www-7 create 
+ +  aws:ec2:Instance simons-testapp-www-7 create 
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 create 
+ +  aws:ec2:Instance simons-testapp-www-4 create 
+ +  aws:ec2:Instance simons-testapp-www-4 create 
+ +  aws:ec2:Instance simons-testapp-www-9 create 
+ +  aws:ec2:Instance simons-testapp-www-9 create 
+ +  aws:ec2:Instance simons-testapp-www-8 create 
+ +  aws:ec2:Instance simons-testapp-www-8 create 
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 create 
+ 
+info: 12 changes previewed:
+    + 12 resources to create
+
+Updating stack 'testapp-ec2'
+Performing changes:
+
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 creating 
+ +  aws:ec2:SecurityGroup simons-testapp-secgrp creating 
+ +  aws:ec2:SecurityGroup simons-testapp-secgrp created 
+ +  aws:ec2:Instance simons-testapp-www-10 creating 
+ +  aws:ec2:Instance simons-testapp-www-10 created 
+ +  aws:ec2:Instance simons-testapp-www-1 creating.. 
+ +  aws:ec2:Instance simons-testapp-www-1 created 
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 creating.. 
+ +  aws:ec2:Instance simons-testapp-www-2 creating 
+ +  aws:ec2:Instance simons-testapp-www-2 created 
+ +  aws:ec2:Instance simons-testapp-www-3 creating.. 
+ +  aws:ec2:Instance simons-testapp-www-3 created 
+ +  aws:ec2:Instance simons-testapp-www-6 creating 
+ +  aws:ec2:Instance simons-testapp-www-6 created 
+ +  aws:ec2:Instance simons-testapp-www-7 creating 
+ +  aws:ec2:Instance simons-testapp-www-7 created 
+ +  aws:ec2:Instance simons-testapp-www-8 creating.. 
+ +  aws:ec2:Instance simons-testapp-www-8 created 
+ +  aws:ec2:Instance simons-testapp-www-9 creating 
+ +  aws:ec2:Instance simons-testapp-www-9 created 
+ +  aws:ec2:Instance simons-testapp-www-5 creating 
+ +  aws:ec2:Instance simons-testapp-www-5 created 
+ +  aws:ec2:Instance simons-testapp-www-4 creating.. 
+ +  aws:ec2:Instance simons-testapp-www-4 created 
+ +  pulumi:pulumi:Stack simons-testapp-testapp-ec2 created 
+ 
+---outputs:---
+publicHostName: "ec2-34-218-250-104.us-west-2.compute.amazonaws.com"
+publicIp      : "34.218.250.104"
+
+info: 12 changes performed:
+    + 12 resources created
+Update duration: 4m8.345469628s
+
+Permalink: https://pulumi.com/pzel/testapp-ec2/updates/27
+ENDING at  Mon Jun 11 20:28:21 PDT 2018

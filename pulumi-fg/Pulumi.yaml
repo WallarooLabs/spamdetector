@@ -1,0 +1,3 @@
+name: simons-testapp
+runtime: nodejs
+description: Simons pulumi test app

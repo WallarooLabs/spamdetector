@@ -1,0 +1,79 @@
+STARTING at  Mon Jun 11 23:24:45 PDT 2018
+SCALING TIMES
+
+Scaling to 1
+workerURL: "bfb25453-4e28031-6998432ea23183e6.elb.us-west-2.amazonaws.com"
+info: 17 changes performed:
+    Update duration: 3m33.698075685s
+Permalink: https://pulumi.com/pzel/simons-testapp/updates/1
+
+
+Scaling to 5
+workerURL: "bfb25453-4e28031-6998432ea23183e6.elb.us-west-2.amazonaws.com"
+info: 2 changes performed:
+    ~ 2 resources updated
+      15 resources unchanged
+Update duration: 33.235175143s
+Permalink: https://pulumi.com/pzel/simons-testapp/updates/2
+
+
+Scaling to 10
+workerURL: "bfb25453-4e28031-6998432ea23183e6.elb.us-west-2.amazonaws.com"
+info: 2 changes performed:
+    ~ 2 resources updated
+      15 resources unchanged
+Update duration: 48.427872615s
+Permalink: https://pulumi.com/pzel/simons-testapp/updates/3
+
+Scaling to 5
+workerURL: "bfb25453-4e28031-6998432ea23183e6.elb.us-west-2.amazonaws.com"
+info: 2 changes performed:
+    ~ 2 resources updated
+      15 resources unchanged
+Update duration: 7m24.634736663s
+Permalink: https://pulumi.com/pzel/simons-testapp/updates/4
+
+Scaling to 1
+workerURL: "bfb25453-4e28031-6998432ea23183e6.elb.us-west-2.amazonaws.com"
+info: 2 changes performed:
+    ~ 2 resources updated
+      15 resources unchanged
+Update duration: 3m38.043909485s
+Permalink: https://pulumi.com/pzel/simons-testapp/updates/5
+
+Scaling to 10
+workerURL: "bfb25453-4e28031-6998432ea23183e6.elb.us-west-2.amazonaws.com"
+info: 2 changes performed:
+    ~ 2 resources updated
+      15 resources unchanged
+Update duration: 1m4.294226494s
+Permalink: https://pulumi.com/pzel/simons-testapp/updates/6
+
+Scaling to 1
+workerURL: "bfb25453-4e28031-6998432ea23183e6.elb.us-west-2.amazonaws.com"
+info: 2 changes performed:
+    ~ 2 resources updated
+      15 resources unchanged
+Update duration: 7m33.501463018s
+Permalink: https://pulumi.com/pzel/simons-testapp/updates/7
+
+PROVISIONING
+Provisioning 1
+workerURL: "bfb25453-6bf5906-7993d60bd695c4a7.elb.us-west-2.amazonaws.com"
+info: 17 changes performed:
+    Update duration: 3m26.207042985s
+Permalink: https://pulumi.com/pzel/simons-testapp/updates/9
+
+Provisioning 5
+workerURL: "bfb25453-dcf4e96-5950822f89ae4042.elb.us-west-2.amazonaws.com"
+info: 17 changes performed:
+    Update duration: 4m4.520436595s
+Permalink: https://pulumi.com/pzel/simons-testapp/updates/11
+
+Provisioning 10
+workerURL: "bfb25453-bce5c24-8bb5ebd7af172008.elb.us-west-2.amazonaws.com"
+info: 17 changes performed:
+Update duration: 5m46.843206206s
+Permalink: https://pulumi.com/pzel/simons-testapp/updates/13
+
+ENDING at  Tue Jun 12 00:19:00 PDT 2018

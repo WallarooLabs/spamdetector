@@ -2,8 +2,8 @@
 .pytest_cache
 amoc
 kafka
-pulumi
 mongooseim
+node_modules
 sink.log
 log
 *.pyc
