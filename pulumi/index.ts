@@ -3,15 +3,19 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as cloud from "@pulumi/cloud";
 
+const sourcePort = 5555;
+
 let workers = new cloud.Service("ts-app-workers", {
     containers: {
         worker: {
-            build: "./testapp",
+            build: "../spamdetector",
             memory: 100,
-            ports: [{ port: 80, external: true }]
+            ports: [{ port: sourcePort, external: true }]
 	}
     },
     replicas: 1
 });
 
-export let workerURL = workers.endpoints.apply(e => e["worker"][80].hostname);
+export let workerURL = workers.endpoints.apply(e => e["worker"][sourcePort].hostname);
+// todo: get leader dns and connect a pool of workers
+

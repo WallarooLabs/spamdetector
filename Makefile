@@ -44,6 +44,7 @@ clean-sink-log:
 
 start-spamdetector: start-sink
 	-rm /tmp/spamdetector-initializer.*
+	cd spamdetector && export PYTHONPATH=$$PYTHONPATH:. &&\
 	exec machida --application-module spamdetector \
 	  --in 127.0.0.1:$(SOURCE_PORT) \
 	  --out 127.0.0.1:$(SINK_PORT) \
@@ -63,7 +64,7 @@ console-consumer:
 	  --bootstrap-server localhost:9092 \
           --topic $(OUT_TOPIC) --from-beginning
 test:
-	@eval '$(shell $(MAKE) env)' && python ./*_test.py
+	@eval '$(shell $(MAKE) env)' && (cd spamdetector && python ./*_test.py)
 
 env:
 	@echo '. ./.env/bin/activate ; export PYTHONPATH="$$PYTHONPATH:."'
