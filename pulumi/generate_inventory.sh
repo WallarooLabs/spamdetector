@@ -1,4 +1,6 @@
 #1/bin/sh
+# TODO: use `pulumi stack output X` syntax
+
 STACK=$(pulumi stack output | tail -n+3)
 CHAT_SERVER=$(echo "$STACK" | grep chat \
 		  | awk '{print $2}' | jq '.[]' \
@@ -13,4 +15,4 @@ for s in "$CHAT_SERVER"; do echo "$s ansible_user=ubuntu"; done
 
 
 echo "[wallaroo_workers]"
-for s in "$WALLAROO_SERVERS"; do echo "$s ansible_user=ubuntu"; done
+for s in $WALLAROO_SERVERS; do echo "$s ansible_user=ubuntu"; done

@@ -30,7 +30,7 @@ stop-chat:
 	-cd mongooseim && ./_build/prod/rel/mongooseim/bin/mongooseim stop
 
 start-bots: amoc
-	(cd amoc && ./run.sh spambots 1 100)
+	(cd amoc && CHAT_SERVER_HOSTNAME=127.0.0.1 ./run.sh spambots 1 100)
 
 start-sink: stop-sink clean-sink-log
 	nc -k -p $(SINK_PORT) -l 127.0.0.1 > sink.log &
