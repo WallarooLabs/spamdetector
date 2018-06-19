@@ -1,13 +1,26 @@
 .PHONY: console-consumer metrics-ui \
 	env start-spamdetector \
+	clear-log \
 	build-chat start-chat stop-chat \
 	start-bots \
-	start-sink stop-sink
+	start-sink stop-sink \
+	run-locally
 
-
+#SHELL := bash -x
+ACTIVATE := . ./.env/bin/activate ; export PYTHONPATH="$$PYTHONPATH:."
+LOGDIR := ./log
 SINK_PORT := 19991
 SOURCE_PORT := 19990
-WAIT_FOR_IT := ./wait_for_it
+WAIT_FOR_IT := ./wait_for_it -q
+
+run-locally: amoc mongooseim clear-log
+	@$(ACTIVATE) &&\
+	 $(MAKE) metrics-ui > $(LOGDIR)/mui.log 2>&1 & \
+	 $(MAKE) start-spamdetector > $(LOGDIR)/spamdetector.log 2>&1 &\
+	 $(MAKE) start-chat > $(LOGDIR)/chat.log 2>&1  &
+	@$(WAIT_FOR_IT) localhost:4000
+	@$(WAIT_FOR_IT) localhost:$(SOURCE_PORT)
+	@$(WAIT_FOR_IT) localhost:5222
 
 amoc:
 	git clone https://github.com/pzel/amoc --depth=1 &&\
@@ -18,32 +31,38 @@ mongooseim:
 	@git clone https://github.com/pzel/mongooseim --depth=1 &&\
 	  (cd mongooseim && ./tools/configure with-none)
 
+clear-log: $(LOGDIR)
+	-rm -f $(LOGDIR)/*
+
+$(LOGDIR):
+	mkdir -p $(LOGDIR)
+
 build-chat: mongooseim
 	cd mongooseim && make rel
 
-start-chat:
+start-chat: stop-chat
 	export WALLAROO_TCP_HOSTPORT="127.0.0.1:$(SOURCE_PORT)" &&\
 	cd mongooseim && ./_build/prod/rel/mongooseim/bin/mongooseim start
 	$(WAIT_FOR_IT) localhost:5222
 
 stop-chat:
-	-cd mongooseim && ./_build/prod/rel/mongooseim/bin/mongooseim stop
+	-pkill -f mongooseim
+	-sleep 0.5
 
 start-bots: amoc
 	(cd amoc && CHAT_SERVER_HOSTNAME=127.0.0.1 ./run.sh spambots 1 100)
 
-start-sink: stop-sink clean-sink-log
-	nc -k -p $(SINK_PORT) -l 127.0.0.1 > sink.log &
+start-sink: $(LOGDIR) stop-sink
+	nc -k -p $(SINK_PORT) -l 127.0.0.1 > $(LOGDIR)/sink.log &
 	$(WAIT_FOR_IT) 127.0.0.1:$(SINK_PORT)
 
 stop-sink:
 	-pkill -f $(SINK_PORT)
 
-clean-sink-log:
-	-rm sink.log
-
 start-spamdetector: start-sink
 	-rm /tmp/spamdetector-initializer.*
+	-pkill -f machida
+	$(ACTIVATE) &&\
 	cd spamdetector && export PYTHONPATH=$$PYTHONPATH:. &&\
 	exec machida --application-module spamdetector \
 	  --in 127.0.0.1:$(SOURCE_PORT) \
@@ -64,7 +83,7 @@ console-consumer:
 	  --bootstrap-server localhost:9092 \
           --topic $(OUT_TOPIC) --from-beginning
 test:
-	@eval '$(shell $(MAKE) env)' && (cd spamdetector && python ./*_test.py)
+	@$(ACTIVATE) && (cd spamdetector && python ./*_test.py)
 
 env:
-	@echo '. ./.env/bin/activate ; export PYTHONPATH="$$PYTHONPATH:."'
+	@echo $(ACTIVATE)
