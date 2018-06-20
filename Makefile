@@ -1,5 +1,6 @@
 .PHONY: build-chat \
 	clear-log \
+	deps \
 	env \
 	metrics-ui \
 	run-locally \
@@ -18,7 +19,7 @@ SINK_PORT := 19991
 SOURCE_PORT := 19990
 WAIT_FOR_IT := ./wait_for_it -q
 
-run-locally: amoc mongooseim clear-log
+run-locally: deps clear-log
 	@$(ACTIVATE) &&\
 	 $(MAKE) metrics-ui > $(LOGDIR)/mui.log 2>&1 & \
 	 $(MAKE) start-spamdetector > $(LOGDIR)/spamdetector.log 2>&1 &\
@@ -26,6 +27,8 @@ run-locally: amoc mongooseim clear-log
 	@$(WAIT_FOR_IT) localhost:4000
 	@$(WAIT_FOR_IT) localhost:$(SOURCE_PORT)
 	@$(WAIT_FOR_IT) localhost:5222
+
+deps: amoc mongooseim
 
 spamdetector-chat:
 	docker run -d --rm -p 5222:5222  \
