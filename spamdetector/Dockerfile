@@ -22,10 +22,8 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "D401AB61 
     python \
     python-dev \
     python-pip \
-    wget
-
-# python testing dependencies
-RUN python2 -m pip install --upgrade pip enum34 \
+    wget \
+  && python2 -m pip install --upgrade pip enum34 \
   && python2 -m pip install pytest==3.2.2
 
 # Wallaroo
@@ -37,13 +35,11 @@ RUN git clone https://github.com/wallaroolabs/wallaroo \
   && cp machida/wallaroo.py /usr/lib/python2.7
 
 RUN mkdir -p /app
-WORKDIR /app
-
 COPY spamdetector.py /app/
 COPY models.py /app/
 COPY requirements.txt /app/
-RUN pip install -r requirements.txt
 COPY docker-entrypoint.sh /app/
-RUN chmod +x /app/docker-entrypoint.sh
+RUN  pip install -r /app/requirements.txt \
+  && chmod +x /app/docker-entrypoint.sh
 
-ENTRYPOINT /app/docker-entrypoint.sh
+# ENTRYPOINT /app/docker-entrypoint.sh

@@ -1,0 +1,34 @@
+version: "3"
+services:
+
+  sink:
+    build: sink
+    command: "/entrypoint.sh"
+    volumes:
+      - ./sink_output:/out/
+    ports:
+      - "5556:5556"
+
+  spamdetector:
+    build: spamdetector
+    command: "/app/docker-entrypoint.sh"
+    environment:
+      WALLAROO_SINK_HOSTPORT: "sink:5556"
+    depends_on:
+      - sink
+
+  chat:
+    image: pzel/spamdetector-chat
+    command: "/entrypoint.sh"
+    environment:
+      WALLAROO_TCP_HOSTPORT: "spamdetector:5555"
+    depends_on:
+      - spamdetector
+
+  bots:
+    build: amoc
+    command: "/amoc.git/run.sh spambots 1 1000"
+    depends_on:
+      - chat
+    environment:
+      CHAT_SERVER_HOSTNAME: chat

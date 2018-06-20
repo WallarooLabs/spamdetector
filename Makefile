@@ -4,6 +4,7 @@
 	metrics-ui \
 	run-locally \
 	setup \
+	spamdetector-chat \
 	start-bots \
 	start-chat \
 	start-sink \
@@ -26,11 +27,11 @@ run-locally: amoc mongooseim clear-log
 	@$(WAIT_FOR_IT) localhost:$(SOURCE_PORT)
 	@$(WAIT_FOR_IT) localhost:5222
 
-chat-container:
+spamdetector-chat:
 	docker run -d --rm -p 5222:5222  \
 	  -e WALLAROO_TCP_HOSTPORT=172.17.0.1:19990  \
 	  --name spamdetector-chat \
-	  spamdetector-chat:latest /entrypoint.sh
+	  pzel/spamdetector-chat:latest /entrypoint.sh
 
 amoc:
 	git clone https://github.com/pzel/amoc --depth=1 &&\
