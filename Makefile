@@ -66,7 +66,7 @@ start-bots: amoc
 	(cd amoc && CHAT_SERVER_HOSTNAME=127.0.0.1 ./run.sh spambots 1 100)
 
 start-sink: $(LOGDIR) stop-sink
-	nc -k -p $(SINK_PORT) -l 127.0.0.1 > $(LOGDIR)/sink.log &
+	nc -k -p $(SINK_PORT) -l 127.0.0.1 > $(LOGDIR)/local_sink.log &
 	$(WAIT_FOR_IT) 127.0.0.1:$(SINK_PORT)
 
 stop-sink:

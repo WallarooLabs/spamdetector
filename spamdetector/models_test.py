@@ -12,7 +12,7 @@ def example_json_event():
 class StanzaTest(unittest.TestCase):
 
     def test_message_is_parsed(self):
-        s = stanza_from_dict({u'ts': 1,
+        s = Stanza.from_dict({u'ts': 1,
                               u'stanza': ("<message to='x' id='1'>" +
                                           "<body>A</body></message>"),
                               u'from': u"a"})
@@ -23,7 +23,7 @@ class StanzaTest(unittest.TestCase):
         self.assertEqual(s.body, u'A')
 
     def test_presence_is_parsed(self):
-        s = stanza_from_dict({u'ts': 2,
+        s = Stanza.from_dict({u'ts': 2,
                               u'stanza': "<presence />",
                               u'from': u"x"})
         self.assertEqual(s.type, "presence")
@@ -33,7 +33,7 @@ class StanzaTest(unittest.TestCase):
         self.assertEqual(s.body, None)
 
     def test_iq_is_parsed(self):
-        s = stanza_from_dict({u'ts': 3,
+        s = Stanza.from_dict({u'ts': 3,
                               u'stanza': '<iq to="x" type="get" id="1"></iq>',
                               u'from': u"x"})
         self.assertEqual(s.type, "iq")

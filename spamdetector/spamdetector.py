@@ -31,7 +31,7 @@ def update_user_stats(stanza, state):
 @wallaroo.decoder(header_length=4, length_fmt=">I")
 def decoder(bs):
     try:
-        stanza = stanza_from_dict(json.loads(bs.decode("utf-8")))
+        stanza = Stanza.from_dict(json.loads(bs.decode("utf-8")))
         return stanza
     except:
         print "failed decoding"

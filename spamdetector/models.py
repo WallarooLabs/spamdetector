@@ -10,6 +10,19 @@ class Stanza:
         self.recipient = recipient
         self.body = body
 
+    @classmethod
+    def from_dict(cls, d):
+        timestamp = d[u'ts']
+        sender = d[u'from']
+        stanza = ET.fromstring(d[u'stanza'])
+        stanza_body = stanza.find('body')
+        type = stanza.tag
+        recipient = stanza.attrib.get('to')
+
+        body = stanza_body.text if (stanza_body is not None) else None
+        return cls(type, timestamp, sender, recipient, body)
+
+
 class MessagingStats():
     def __init__(self):
         self._users = {}
@@ -41,14 +54,3 @@ def maybe_report(user, user_stats):
         return Report(user, "repeated_message_bodies")
     else:
         return None
-
-def stanza_from_dict(d):
-    timestamp = d[u'ts']
-    sender = d[u'from']
-    stanza = ET.fromstring(d[u'stanza'])
-    stanza_body = stanza.find('body')
-    type = stanza.tag
-    recipient = stanza.attrib.get('to')
-
-    body = stanza_body.text if (stanza_body is not None) else None
-    return Stanza(type, timestamp, sender, recipient, body)
