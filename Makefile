@@ -17,7 +17,7 @@ ACTIVATE := . ./.env/bin/activate ; export PYTHONPATH="$$PYTHONPATH:."
 LOGDIR := ./log
 SINK_PORT := 19991
 SOURCE_PORT := 19990
-WAIT_FOR_IT := ./wait_for_it -q
+WAIT_FOR_IT := ./wait_for_it
 
 run-locally: deps clear-log
 	@$(ACTIVATE) &&\

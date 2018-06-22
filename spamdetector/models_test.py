@@ -3,12 +3,6 @@ from models import *
 import unittest
 from mock import Mock, MagicMock
 
-def example_json_event():
-    d = """
-    {"ts":1528218310158,"stanza":"<message xml:lang='en' type='chat' to='108@localhost' id='s740958d65f69101212fd15e6f20af6d3'><body>LNen</body></message>","from":"13@localhost/res1"}
-    """
-    return json.loads(d)
-
 class StanzaTest(unittest.TestCase):
 
     def test_message_is_parsed(self):
@@ -47,14 +41,14 @@ class UserStatsTest(unittest.TestCase):
 
     def test_unique_bodies_are_a_set(self):
         stanza = Mock()
-        us = UserStats()
+        us = UserStats("user1")
         self.assertEqual(us.unique_bodies, set())
 
     def test_unique_bodies_are_updated(self):
         stanza = Mock()
         stanza.body = "a"
 
-        us = UserStats()
+        us = UserStats("user2")
         us.update(stanza)
         self.assertEqual(us.unique_bodies, set({"a"}))
 
@@ -65,7 +59,7 @@ class UserStatsTest(unittest.TestCase):
         stanza2 = Mock()
         stanza2.body = "a"
 
-        us = UserStats()
+        us = UserStats("user3")
         us.update(stanza1)
         us.update(stanza2)
         self.assertEqual(us.unique_bodies, set({"a"}))
@@ -78,7 +72,7 @@ class UserStatsTest(unittest.TestCase):
         stanza2 = Mock()
         stanza2.body = "a"
 
-        us = UserStats()
+        us = UserStats("user4")
         us.update(stanza1)
         us.update(stanza2)
         self.assertEqual(us.message_count, 2)
@@ -92,33 +86,42 @@ class UserStatsTest(unittest.TestCase):
         stanza2.body = "a"
         stanza2.recipient = "Q"
 
-        us = UserStats()
+        us = UserStats("user5")
         us.update(stanza1)
         us.update(stanza2)
         self.assertEqual(len(us.unique_recipients), 2)
 
-class MaybeReportTest(unittest.TestCase):
+
+class ClassifierTest(unittest.TestCase):
 
     def test_it_is_null_if_the_user_is_normal(self):
         us = Mock()
+        us.user = "user1"
         us.message_count = 10
         us.unique_bodies = set("%s"%i for i in range(1,11))
         us.unique_recipients = 5
-        self.assertEqual(None, maybe_report("a", us))
+
+        c = Classifier()
+        self.assertEqual(None, c.classify(us))
 
     def test_report_not_returned_if_there_is_enough_unique_messages(self):
         us = Mock()
+        us.user = "user2"
         us.message_count = 10
         us.unique_bodies = set("%s"%i for i in range(1,6))
-        self.assertEqual(None, maybe_report("a", us))
+
+        c = Classifier()
+        self.assertEqual(None, c.classify(us))
 
     def test_report_is_returned_if_more_than_half_of_msgs_are_the_same(self):
         us = Mock()
+        us.user = "user3"
         us.message_count = 10
         us.unique_bodies = set(("a","b","c"))
-        self.assertEqual(("a","repeated_message_bodies"),
-                         maybe_report("a", us))
 
+        c = Classifier()
+        self.assertEqual(("user3","repeated_message_bodies"),
+                         c.classify(us))
 
 if __name__ == '__main__':
     unittest.main()
