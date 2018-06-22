@@ -1,6 +1,12 @@
 version: "3"
 services:
 
+  mui:
+    image: wallaroolabs/wallaroo-metrics-ui:0.4.0
+    ports:
+      - "4000:4000"
+      - "5001:5001"
+
   sink:
     build: sink
     command: "/entrypoint.sh"
@@ -15,6 +21,7 @@ services:
     environment:
       WALLAROO_SINK_HOSTPORT: "sink:5556"
     depends_on:
+      - mui
       - sink
 
   chat:

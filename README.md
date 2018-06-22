@@ -12,6 +12,8 @@ of malicious clients.
 	 (.. wait for docker to download the world ..)
 	$ tail -f sink_output/sink.log
 
+Open http://localhost:4000 to see the statistics for your pipeline.
+
 
 # Development & running w/out Docker
 
