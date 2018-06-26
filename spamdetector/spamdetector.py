@@ -1,6 +1,10 @@
 import json
+import zlib
 from models import *
 import wallaroo
+
+N_PARTITIONS = 1024
+PARTITION_KEYS = range(0,N_PARTITIONS)
 
 def application_setup(args):
     in_host, in_port = wallaroo.tcp_parse_input_addrs(args)[0]
@@ -10,13 +14,18 @@ def application_setup(args):
 
     ab = wallaroo.ApplicationBuilder("Spam Detector")
     ab.new_pipeline("Message text analysis", tcp_source)
-    ab.to(filter_messages_only)
-    ab.to_stateful(update_user_stats, MessagingStatistics,
-                   "Count per-user messaging statistics")
-    ab.to_stateful(classify_user, Classifier,
-                   "Classify users based on statistics")
+    ab.to_parallel(filter_messages_only)
+    ab.to_state_partition(update_user_stats, MessagingStatistics,
+                          "Count per-user messaging statistics",
+                          sender_to_partition_key,
+                          PARTITION_KEYS)
+    ab.to_state_partition(classify_user, Classifier,
+                          "Classify users based on statistics",
+                          stats_to_partition_key,
+                          PARTITION_KEYS)
     ab.to_sink(tcp_sink)
     return ab.build()
+
 
 @wallaroo.computation(name="Filter XMPP Messages from other stanzas")
 def filter_messages_only(stanza):
@@ -47,3 +56,11 @@ def decoder(bs):
 def encoder(report):
     payload = json.dumps({"user": report.user, "reason": report.reason})
     return payload + '\n'
+
+@wallaroo.partition
+def stats_to_partition_key(stats):
+    return zlib.adler32(stats.user) % N_PARTITIONS
+
+@wallaroo.partition
+def sender_to_partition_key(stanza):
+    return zlib.adler32(stanza.sender) % N_PARTITIONS
