@@ -38,17 +38,24 @@ class MessagingStatistics():
 
 class Classifier():
     def __init__(self):
-        self._users = {}
+        self._reported_users = {}
 
     def classify(self, user_stats):
         user = user_stats.user
-        if self._users.get(user, False):
-            return None # Already reported
+        if self._has_been_reported(user):
+            return None
         elif len(user_stats.unique_bodies) < (user_stats.message_count/2):
-            self._users[user] = True
+            self._mark_as_reported(user)
             return Report(user, "repeated_message_bodies")
         else:
             return None
+
+    def _has_been_reported(self, user):
+        return self._reported_users.get(user, False)
+
+    def _mark_as_reported(self, user):
+        self._reported_users[user] = True
+
 
 class UserStats():
     def __init__(self, user):
