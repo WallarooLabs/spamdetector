@@ -1,3 +1,0 @@
-name: simons-spamdetector
-runtime: python
-description: Simon's spam detector app in Pulumi/Fargate
