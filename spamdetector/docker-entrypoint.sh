@@ -1,6 +1,6 @@
 #!/bin/bash
+export PYTHONPATH=/app:/wallaroo-src/machida
 cd /app &&\
-export PYTHONPATH=/app:/wallaroo-src/machida &&\
 machida --application-module spamdetector \
      --in 0.0.0.0:5555 \
      --out "$WALLAROO_SINK_HOSTPORT" \
