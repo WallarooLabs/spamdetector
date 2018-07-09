@@ -60,8 +60,3 @@
     shell: >
       export WALLAROO_TCP_HOSTPORT={{ groups['wallaroo_workers'][0] }}:5555;
       ~/mongooseim/bin/mongooseim start
-
-    # debug:
-    #   msg: >
-    #     export WALLAROO_TCP_HOSTPORT={{ groups['wallaroo_workers'][0] }}:5555;
-    #     ~/mongooseim/bin/mongooseim start

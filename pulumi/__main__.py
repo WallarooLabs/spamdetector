@@ -1,9 +1,9 @@
 import pulumi
 from pulumi_aws import ec2
 
-ami = "ami-e308459b"
-instance_type = "t2.micro"
-wallaroo_instance_count = 3
+ami = "ami-377a314f" # wallaroo-0.4.3
+instance_type = "m4.large"
+wallaroo_instance_count = 1
 chat_instance_count = 1
 
 group = ec2.SecurityGroup("spamdetector-secgrp",
